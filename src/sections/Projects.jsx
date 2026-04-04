@@ -6,25 +6,17 @@ const projects = [
     title: 'M1neral',
     description:
       'Geoscience data visualization: Mapbox GL JS + DeckGL for oil & gas datasets at massive scale, Kepler.gl-style layer management, virtualised tables, and a RAG chatbot (Pinecone + OpenAI) over agreement PDFs with Azure Functions for OCR indexing.',
-    image: '/projects/project1.png',
+    image: '/projects/m1neral.png',
     tags: ['Next.js', 'NestJS', 'GraphQL', 'Mapbox', 'DeckGL', 'ElasticSearch', 'RAG'],
-    link: '#contact',
+    link: 'https://app.m1neral.com/',
   },
   {
     title: 'Centinel',
     description:
       'B2B grid outage insurance: automated claims in three steps — outage detection, email surveys to affected businesses, SnapRefund payouts. AI risk-scoring, Stripe subscriptions, and fully automated client confirmation flows.',
-    image: '/projects/project2.png',
+    image: '/projects/centinel.png',
     tags: ['React', 'Next.js', 'NestJS', 'PostgreSQL', 'Stripe', 'OpenAI'],
-    link: '#contact',
-  },
-  {
-    title: 'Sales Rep AI',
-    description:
-      'RAG-powered sales training over proprietary PDFs (Pinecone + OpenAI), FastAPI auth, Chainlit conversations, and a Stripe freemium path that moves trials into paid subscriptions.',
-    image: '/projects/project3.png',
-    tags: ['Python', 'FastAPI', 'Chainlit', 'Pinecone', 'OpenAI', 'Stripe'],
-    link: '#contact',
+    link: 'https://app.yourcentinel.com/',
   },
   {
     title: 'Perigon AI',
@@ -38,8 +30,16 @@ const projects = [
     title: 'Zenleaf Dispensary',
     description:
       'Large-scale e-commerce: Next.js 13 App Router migration across multiple storefronts, SEO overhaul with structured data and sitemaps, and a shared Tailwind component system that cut duplication and sped up new store variants.',
-    image: '/projects/project1.png',
+    image: '/projects/zenleaf.png',
     tags: ['Next.js 13', 'React', 'TailwindCSS', 'Node.js', 'MongoDB'],
+    link: 'https://zenleafdispensaries.com/',
+  },
+  {
+    title: 'Sales Rep AI',
+    description:
+      'RAG-powered sales training over proprietary PDFs (Pinecone + OpenAI), FastAPI auth, Chainlit conversations, and a Stripe freemium path that moves trials into paid subscriptions.',
+    image: '/projects/project3.png',
+    tags: ['Python', 'FastAPI', 'Chainlit', 'Pinecone', 'OpenAI', 'Stripe'],
     link: '#contact',
   },
 ];
