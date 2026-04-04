@@ -1,28 +1,29 @@
-import { Code2, Lightbulb, Rocket, Users } from "lucide-react";
+import { Code2, Lightbulb, Rocket, Map } from 'lucide-react';
 
 const highlights = [
   {
     icon: Code2,
-    title: "Clean Code",
+    title: 'Full stack delivery',
     description:
-      "Writing maintainable, scalable code that stands the test of time.",
+      'End-to-end ownership from API design and databases to polished React/Next.js frontends.',
+  },
+  {
+    icon: Map,
+    title: 'Geospatial at scale',
+    description:
+      'Mapbox, DeckGL, and ElasticSearch pipelines for millions of records and fast map UX.',
   },
   {
     icon: Rocket,
-    title: "Performance",
+    title: 'AI & LLM in production',
     description:
-      "Optimizing for speed and delivering lightning-fast user experiences.",
-  },
-  {
-    icon: Users,
-    title: "Collaboration",
-    description: "Working closely with teams to bring ideas to life.",
+      'RAG over documents, conversational agents, and risk-scoring integrated into real SaaS workflows.',
   },
   {
     icon: Lightbulb,
-    title: "Innovation",
+    title: 'Platform thinking',
     description:
-      "Staying ahead with the latest technologies and best practices.",
+      'Stripe billing, cloud jobs, and GraphQL/REST APIs built to stay maintainable as products grow.',
   },
 ];
 
@@ -40,39 +41,37 @@ export const About = () => {
             </div>
 
             <h2 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in animation-delay-100 text-secondary-foreground">
-              Building the future,
+              Building SaaS, maps, and
               <span className="font-serif italic font-normal text-white">
-                {" "}
-                one component at a time.
+                {' '}
+                intelligent features.
               </span>
             </h2>
 
             <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
               <p>
-                I'm a passionate software engineer with over 5 years of
-                experience crafting digital products that make a difference. My
-                journey started with a curiosity for how things work on the web,
-                and it has evolved into a deep expertise in modern frontend
-                technologies.
+                I&apos;m a full stack engineer with 3.5+ years shipping production SaaS
+                platforms, AI/LLM-powered features, and large-scale geospatial
+                applications across 5+ client products. My work spans API architecture,
+                RAG pipelines, frontend performance, Stripe billing, and cloud automation.
               </p>
               <p>
-                I specialize in React, Next.js, and TypeScript, building
-                everything from sleek landing pages to complex enterprise
-                applications. My approach combines technical excellence with a
-                keen eye for design and user experience.
+                Day to day I work across JavaScript/TypeScript and Python stacks — React,
+                Next.js (App Router), NestJS, GraphQL, FastAPI, MongoDB, PostgreSQL,
+                ElasticSearch, Mapbox GL JS, DeckGL, and cloud functions on Azure and AWS.
               </p>
               <p>
-                When I'm not coding, you'll find me exploring new technologies,
-                contributing to open-source projects, or sharing knowledge with
-                the developer community.
+                I care about measurable outcomes: faster APIs, healthier Core Web Vitals,
+                automated billing and payouts, and map experiences that stay responsive on
+                huge datasets.
               </p>
             </div>
 
             <div className="glass rounded-2xl p-6 glow-border animate-fade-in animation-delay-300">
               <p className="text-lg font-medium italic text-foreground">
-                "My mission is to create digital experiences that are not just
-                functional, but truly delightful — products that users love to
-                use and developers love to maintain."
+                &ldquo;I aim to ship systems that are reliable under load, straightforward
+                to extend, and honest about trade-offs — from database indexes to prompt
+                design.&rdquo;
               </p>
             </div>
           </div>
@@ -89,9 +88,7 @@ export const About = () => {
                   <item.icon className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">
-                  {item.description}
-                </p>
+                <p className="text-sm text-muted-foreground">{item.description}</p>
               </div>
             ))}
           </div>

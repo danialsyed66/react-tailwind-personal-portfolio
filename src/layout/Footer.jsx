@@ -1,16 +1,28 @@
-import { Github, Linkedin, Twitter, Heart } from "lucide-react";
+import { Linkedin, Globe, Mail } from 'lucide-react';
 
 const socialLinks = [
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter" },
+  {
+    icon: Linkedin,
+    href: 'https://www.linkedin.com/in/danial-syed-7897174b',
+    label: 'LinkedIn',
+  },
+  {
+    icon: Globe,
+    href: 'https://danial-syed.netlify.app',
+    label: 'Website',
+  },
+  {
+    icon: Mail,
+    href: 'mailto:danialsyed66@gmail.com',
+    label: 'Email',
+  },
 ];
 
 const footerLinks = [
-  { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
-  { href: "#experience", label: "Experience" },
-  { href: "#contact", label: "Contact" },
+  { href: '#about', label: 'About' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#contact', label: 'Contact' },
 ];
 
 export const Footer = () => {
@@ -23,16 +35,16 @@ export const Footer = () => {
           {/* Logo & Copyright */}
           <div className="text-center md:text-left">
             <a href="#" className="text-xl font-bold tracking-tight">
-              PM<span className="text-primary">.</span>
+              DS<span className="text-primary">.</span>
             </a>
             <p className="text-sm text-muted-foreground mt-2">
-              © {currentYear} Pedro Machado. All rights reserved.
+              © {currentYear} Syed M. Danial Raza Naqvi. All rights reserved.
             </p>
           </div>
 
           {/* Links */}
           <nav className="flex flex-wrap justify-center gap-6">
-            {footerLinks.map((link) => (
+            {footerLinks.map(link => (
               <a
                 key={link.href}
                 href={link.href}
@@ -45,7 +57,7 @@ export const Footer = () => {
 
           {/* Social Links */}
           <div className="flex items-center gap-4">
-            {socialLinks.map((social) => (
+            {socialLinks.map(social => (
               <a
                 key={social.label}
                 href={social.href}
