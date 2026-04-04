@@ -15,7 +15,7 @@ const projects = [
     description:
       'B2B grid outage insurance: automated claims in three steps — outage detection, email surveys to affected businesses, SnapRefund payouts. AI risk-scoring, Stripe subscriptions, and fully automated client confirmation flows.',
     image: '/projects/centinel.png',
-    tags: ['React', 'Next.js', 'NestJS', 'PostgreSQL', 'Stripe', 'OpenAI'],
+    tags: ['React', 'Next.js', 'NestJS', 'PostgreSQL', 'Django', 'Stripe', 'OpenAI'],
     link: 'https://app.yourcentinel.com/',
   },
   {
