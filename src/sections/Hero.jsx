@@ -125,6 +125,8 @@ export const Hero = () => {
                 <a
                   key={social.label}
                   href={social.href}
+                  target={social.href.includes('http') ? '_blank' : '_self'}
+                  rel="noopener noreferrer"
                   aria-label={social.label}
                   className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
                 >

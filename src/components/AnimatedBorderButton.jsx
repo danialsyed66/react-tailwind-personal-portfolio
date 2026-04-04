@@ -39,7 +39,7 @@ export const AnimatedBorderButton = ({ children, href, download }) => {
       <a
         href={href}
         download={download}
-        target="_blank"
+        target={href.includes('http') ? '_blank' : '_self'}
         rel="noopener noreferrer"
         className={className}
       >

@@ -19,7 +19,13 @@ export const Button = ({
   );
   if (href) {
     return (
-      <a href={href} className={`inline-flex ${classes}`} {...props}>
+      <a
+        href={href}
+        target={href.includes('http') ? '_blank' : '_self'}
+        rel="noopener noreferrer"
+        className={`inline-flex ${classes}`}
+        {...props}
+      >
         {inner}
       </a>
     );

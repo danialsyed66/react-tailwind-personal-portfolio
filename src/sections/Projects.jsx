@@ -88,6 +88,8 @@ export const Projects = () => {
                     href={project.link}
                     className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
                     aria-label={`Discuss ${project.title}`}
+                    target={project.link.includes('http') ? '_blank' : '_self'}
+                    rel="noopener noreferrer"
                   >
                     <ArrowUpRight className="w-5 h-5" />
                   </a>
