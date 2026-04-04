@@ -22,7 +22,7 @@ const projects = [
     title: 'Perigon AI',
     description:
       'Geospatial store intelligence: NestJS + GraphQL, PostgreSQL spatial queries for low-latency maps, bulk ingestion, Google Maps clustering and boundaries, and an admin layer module for ops teams.',
-    image: '/projects/project4.png',
+    image: '/projects/perigon.png',
     tags: ['React', 'NestJS', 'GraphQL', 'PostgreSQL', 'Google Maps'],
     link: '#contact',
   },
@@ -38,7 +38,7 @@ const projects = [
     title: 'Sales Rep AI',
     description:
       'RAG-powered sales training over proprietary PDFs (Pinecone + OpenAI), FastAPI auth, Chainlit conversations, and a Stripe freemium path that moves trials into paid subscriptions.',
-    image: '/projects/project3.png',
+    image: '/projects/sales-rep.png',
     tags: ['Python', 'FastAPI', 'Chainlit', 'Pinecone', 'OpenAI', 'Stripe'],
     link: '#contact',
   },
