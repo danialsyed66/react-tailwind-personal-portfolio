@@ -112,8 +112,8 @@ export const Hero = () => {
                 Contact Me <ArrowRight className="w-5 h-5" />
               </Button>
               <AnimatedBorderButton
-                href="/Danial_Syed_CV.pdf"
-                download="Danial_Syed_CV.pdf"
+                href="/Resume Syed M. Danial Raza Naqvi.pdf"
+                download="Resume Syed M. Danial Raza Naqvi.pdf"
               >
                 <Download className="w-5 h-5" />
                 Download CV
