@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { Mail, MessageCircle, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/Button';
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
@@ -11,10 +11,10 @@ const contactInfo = [
     href: 'mailto:danialsyed66@gmail.com',
   },
   {
-    icon: Phone,
-    label: 'Phone',
+    icon: MessageCircle,
+    label: 'WhatsApp',
     value: '+92 337 040 7835',
-    href: 'tel:+923370407835',
+    href: 'https://wa.me/923370407835',
   },
   {
     icon: MapPin,
