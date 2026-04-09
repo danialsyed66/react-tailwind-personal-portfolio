@@ -29,7 +29,7 @@ const testimonials = [
     author: 'Abdul Mannan',
     role: 'Senior Software Engineer',
     avatar: avatar('Abdul Mannan'),
-    relationship: 'Ali was senior to Danial but didn’t manage Danial directly',
+    relationship: 'Abdul worked with Danial on the same team',
   },
   {
     quote:
