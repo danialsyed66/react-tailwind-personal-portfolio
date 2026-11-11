@@ -1,47 +1,37 @@
 import { Button } from '@/components/Button';
-import { ArrowRight, ChevronDown, Linkedin, Mail, Globe, Download } from 'lucide-react';
+import { ArrowRight, ChevronDown, Github, Linkedin, Mail, Download } from 'lucide-react';
+import { LINKS } from '@/data/site';
 import { AnimatedBorderButton } from '../components/AnimatedBorderButton';
 
 const skills = [
   'TypeScript',
-  'JavaScript',
-  'Python',
   'React',
   'Next.js',
   'NestJS',
-  'GraphQL',
-  'FastAPI',
+  'Node.js',
+  'Python',
   'Django',
-  'Tailwind CSS',
+  'FastAPI',
+  'GraphQL',
   'Mapbox GL JS',
-  'Google Maps API',
-  'DeckGL',
+  'deck.gl',
+  'PostGIS',
   'MongoDB',
   'PostgreSQL',
   'ElasticSearch',
-  'Stripe',
+  'Redis',
   'OpenAI',
+  'LangChain',
   'Pinecone',
-  'Azure',
+  'Stripe',
   'AWS',
+  'Azure',
 ];
 
 const socialLinks = [
-  {
-    icon: Linkedin,
-    href: 'https://www.linkedin.com/in/danial-syed-7897174b',
-    label: 'LinkedIn',
-  },
-  {
-    icon: Globe,
-    href: 'https://danial-syed.netlify.app',
-    label: 'Website',
-  },
-  {
-    icon: Mail,
-    href: 'mailto:danialsyed66@gmail.com',
-    label: 'Email',
-  },
+  { icon: Linkedin, href: LINKS.linkedin, label: 'LinkedIn' },
+  { icon: Github, href: LINKS.github, label: 'GitHub' },
+  { icon: Mail, href: LINKS.email, label: 'Email' },
 ];
 
 export const Hero = () => {
@@ -86,7 +76,7 @@ export const Hero = () => {
             <div className="animate-fade-in">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                Full Stack Engineer · AI & LLM · SaaS & Geospatial
+                Senior Full-Stack Engineer · AI & Geospatial SaaS
               </span>
             </div>
 
@@ -100,21 +90,19 @@ export const Hero = () => {
                 <span className="font-serif italic font-normal text-white">clarity.</span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                Hi, I&apos;m Danial — a full stack engineer with 3.5+ years building
-                enterprise SaaS, AI/LLM features, and large-scale geospatial apps across
-                geoscience, insurance, e-commerce, and AI-assisted sales training.
+                Hi, I&apos;m Danial, a senior full-stack engineer at MergeStack in Lahore.
+                For four years I&apos;ve built SaaS products for clients in oil &amp; gas,
+                insurance, freight logistics, retail and e-commerce, mostly ones with a lot
+                of maps, data or AI in them.
               </p>
             </div>
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-              <Button size="lg" href="#contact">
-                Contact Me <ArrowRight className="w-5 h-5" />
+              <Button size="lg" href="#projects">
+                See my work <ArrowRight className="w-5 h-5" />
               </Button>
-              <AnimatedBorderButton
-                href="/Resume Syed M. Danial Raza Naqvi.pdf"
-                download="Resume Syed M. Danial Raza Naqvi.pdf"
-              >
+              <AnimatedBorderButton href={LINKS.cv} download="Resume Syed M. Danial Raza Naqvi.pdf">
                 <Download className="w-5 h-5" />
                 Download CV
               </AnimatedBorderButton>
@@ -138,7 +126,7 @@ export const Hero = () => {
             </div>
           </div>
           {/* Right Column - Profile Image */}
-          <div className="relatice animate-fade-in animation-delay-300">
+          <div className="relative animate-fade-in animation-delay-300">
             {/* Profile Image */}
             <div className="relative max-w-md mx-auto">
               <div
@@ -163,7 +151,7 @@ export const Hero = () => {
                 </div>
                 {/* Stats Badge */}
                 <div className="absolute -top-8 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500">
-                  <div className="text-2xl font-bold text-primary">3.5+</div>
+                  <div className="text-2xl font-bold text-primary">4+</div>
                   <div className="text-xs">Years Exp.</div>
                 </div>
               </div>

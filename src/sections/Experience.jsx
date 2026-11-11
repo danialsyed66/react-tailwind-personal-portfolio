@@ -1,29 +1,29 @@
 const experiences = [
   {
-    period: 'Sep 2025 — Present',
+    period: 'Sep 2025 – Present',
     role: 'Senior Software Engineer',
     company: 'MergeStack · Lahore',
     description:
-      'Leading AI/RAG initiatives: retrieval-augmented workflows, LLM integrations, and production features across SaaS products — with strong focus on Python, fine-tuning, and scalable service design.',
-    technologies: ['RAG', 'OpenAI', 'Python', 'NestJS', 'SaaS'],
+      'I lead builds on client products and mentor the engineers on them. I wrote the first commit of Sense and Pedant, wrote Sense’s authorization engine and Centinel’s Partner API, led Centinel’s money and security review before launch, and built AI document extraction, a RAG sales coach and billing for AI usage.',
+    technologies: ['NestJS', 'React', 'Python', 'OpenAI', 'AWS', 'Stripe'],
     current: true,
   },
   {
-    period: 'Sep 2023 — Sep 2025',
+    period: 'Sep 2023 – Sep 2025',
     role: 'Software Engineer',
     company: 'MergeStack · Lahore',
     description:
-      'Shipped end-to-end features across enterprise SaaS: GraphQL APIs, Mapbox/DeckGL geospatial UIs, Stripe subscriptions and webhooks, Azure/AWS automation, and AI-assisted product flows.',
-    technologies: ['React', 'Next.js', 'NestJS', 'GraphQL', 'Mapbox', 'Stripe'],
+      'Most of my time went into M1neral, where I was the main author of the map (Mapbox GL and deck.gl), the data grid and the Azure Durable Functions import engine, and into Perigon AI, where I was the top contributor on all four services. I also started the Zen Leaf & MÜV move to the Next.js App Router and led it through to completion.',
+    technologies: ['Mapbox GL', 'deck.gl', 'PostGIS', 'Azure Functions', 'ElasticSearch'],
     current: false,
   },
   {
-    period: 'Sep 2022 — Sep 2023',
+    period: 'Sep 2022 – Sep 2023',
     role: 'Associate Software Engineer',
     company: 'MergeStack · Lahore',
     description:
-      'Built full-stack MERN features for client platforms: React and Material UI frontends, Node backends, GraphQL, and integrations such as Google Maps and Mapbox.',
-    technologies: ['React', 'Node.js', 'GraphQL', 'MongoDB', 'Mapbox'],
+      'I worked on Zen Leaf & MÜV, dispensary websites for 13 states built from one Next.js and WordPress codebase. I built the setup that ships both brands from that one codebase, the store locator and store hours, the menus and the SEO. I also worked on map, table and import features for M1neral.',
+    technologies: ['Next.js', 'React', 'WordPress', 'GraphQL', 'Tailwind CSS'],
     current: false,
   },
 ];
@@ -43,7 +43,7 @@ export const Experience = () => {
             className="text-secondary-foreground text-sm
            font-medium tracking-wider uppercase animate-fade-in"
           >
-            Career Journey
+            Career
           </span>
           <h2
             className="text-4xl md:text-5xl font-bold
@@ -58,9 +58,9 @@ export const Experience = () => {
             className="text-muted-foreground
            animate-fade-in animation-delay-200"
           >
-            One company, growing scope — from associate engineer to senior, shipping SaaS,
-            geospatial, and AI-powered products for clients in geoscience, insurance,
-            e-commerce, and more.
+            Four years at one company, from associate engineer to senior, building
+            geospatial, data-heavy and AI products for clients in oil &amp; gas, insurance,
+            freight logistics, retail and e-commerce.
           </p>
         </div>
 

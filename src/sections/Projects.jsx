@@ -1,48 +1,7 @@
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Images } from 'lucide-react';
+import { Link } from 'react-router';
 import { AnimatedBorderButton } from '@/components/AnimatedBorderButton';
-
-const projects = [
-  {
-    title: 'M1neral',
-    description:
-      'Geoscience data visualization: Mapbox GL JS + DeckGL for oil & gas datasets at massive scale, Kepler.gl-style layer management, virtualised tables, and a RAG chatbot (Pinecone + OpenAI) over agreement PDFs with Azure Functions for OCR indexing.',
-    image: '/projects/m1neral.png',
-    tags: ['Next.js', 'NestJS', 'GraphQL', 'Mapbox', 'DeckGL', 'ElasticSearch', 'RAG'],
-    link: 'https://app.m1neral.com/',
-  },
-  {
-    title: 'Centinel',
-    description:
-      'B2B grid outage insurance: automated claims in three steps — outage detection, email surveys to affected businesses, SnapRefund payouts. AI risk-scoring, Stripe subscriptions, and fully automated client confirmation flows.',
-    image: '/projects/centinel.png',
-    tags: ['React', 'Next.js', 'NestJS', 'PostgreSQL', 'Django', 'Stripe', 'OpenAI'],
-    link: 'https://app.yourcentinel.com/',
-  },
-  {
-    title: 'Perigon AI',
-    description:
-      'Geospatial store intelligence: NestJS + GraphQL, PostgreSQL spatial queries for low-latency maps, bulk ingestion, Google Maps clustering and boundaries, and an admin layer module for ops teams.',
-    image: '/projects/perigon.png',
-    tags: ['React', 'NestJS', 'GraphQL', 'PostgreSQL', 'Google Maps'],
-    link: '#contact',
-  },
-  {
-    title: 'Zenleaf Dispensary',
-    description:
-      'Large-scale e-commerce: Next.js 13 App Router migration across multiple storefronts, SEO overhaul with structured data and sitemaps, and a shared Tailwind component system that cut duplication and sped up new store variants.',
-    image: '/projects/zenleaf.png',
-    tags: ['Next.js 13', 'React', 'TailwindCSS', 'Node.js', 'MongoDB'],
-    link: 'https://zenleafdispensaries.com/',
-  },
-  {
-    title: 'Sales Rep AI',
-    description:
-      'RAG-powered sales training over proprietary PDFs (Pinecone + OpenAI), FastAPI auth, Chainlit conversations, and a Stripe freemium path that moves trials into paid subscriptions.',
-    image: '/projects/sales-rep.png',
-    tags: ['Python', 'FastAPI', 'Chainlit', 'Pinecone', 'OpenAI', 'Stripe'],
-    link: '#contact',
-  },
-];
+import { projects } from '@/data/projects';
 
 export const Projects = () => {
   return (
@@ -54,78 +13,88 @@ export const Projects = () => {
         {/* Section Header */}
         <div className="text-center mx-auto max-w-3xl mb-16">
           <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
-            Featured Work
+            Selected Work
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
-            Key projects at
-            <span className="font-serif italic font-normal text-white"> MergeStack.</span>
+            Products I&apos;ve
+            <span className="font-serif italic font-normal text-white"> built.</span>
           </h2>
           <p className="text-muted-foreground animate-fade-in animation-delay-200">
-            Representative client products — geospatial, insurance, AI training, retail
-            intelligence, and e-commerce — aligned with my CV.
+            Client products in oil &amp; gas, insurance, freight logistics, retail and
+            e-commerce, plus one of my own. Each card opens a case study: what the product
+            does, what I built, and screenshots.
           </p>
         </div>
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, idx) => (
-            <div
-              key={idx}
-              className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1"
+            <Link
+              key={project.slug}
+              to={`/projects/${project.slug}`}
+              className="group glass rounded-2xl overflow-hidden animate-fade-in flex flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               style={{ animationDelay: `${(idx + 1) * 100}ms` }}
+              aria-label={`${project.name}: ${project.tagline}. Read the case study.`}
             >
               {/* Image */}
-              <div className="relative overflow-hidden aspect-video">
+              <div className="relative overflow-hidden aspect-video bg-surface">
                 <img
-                  src={project.image}
-                  alt=""
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  src={project.cover.src}
+                  alt={project.cover.alt}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-card via-card/50 to-transparent opacity-60" />
-                {/* Overlay Links */}
-                <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <a
-                    href={project.link}
-                    className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
-                    aria-label={`Discuss ${project.title}`}
-                    target={project.link.includes('http') ? '_blank' : '_self'}
-                    rel="noopener noreferrer"
+                <div className="absolute inset-0 bg-linear-to-t from-card via-card/30 to-transparent opacity-70" />
+                {/* Darker chips so they stay readable on light screenshots */}
+                <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-background/55 backdrop-blur-md border border-border/60 text-xs text-foreground/90">
+                  {project.industry}
+                </span>
+                {project.images.length > 1 && (
+                  <span
+                    className="absolute top-4 right-4 px-3 py-1 rounded-full bg-background/55 backdrop-blur-md border border-border/60 text-xs text-foreground/90 inline-flex items-center gap-1.5"
+                    aria-label={`${project.images.length} screenshots`}
                   >
-                    <ArrowUpRight className="w-5 h-5" />
-                  </a>
-                </div>
+                    <Images className="w-3.5 h-3.5" />
+                    {project.images.length}
+                  </span>
+                )}
               </div>
 
               {/* Content */}
-              <div className="p-6 space-y-4">
+              <div className="p-6 flex flex-col gap-4 flex-1">
                 <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <ArrowUpRight
-                    className="w-5 h-5 shrink-0
-                  text-muted-foreground group-hover:text-primary
-                   group-hover:translate-x-1 
-                   group-hover:-translate-y-1 transition-all"
-                  />
+                  <div>
+                    <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
+                      {project.name}
+                    </h3>
+                    <p className="text-xs text-primary/90 mt-1">
+                      {project.role} · {project.period}
+                    </p>
+                  </div>
+                  <ArrowUpRight className="w-5 h-5 shrink-0 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
                 </div>
-                <p className="text-muted-foreground text-sm">{project.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag, tagIdx) => (
+                <p className="text-muted-foreground text-sm">{project.tagline}</p>
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  {project.stack.slice(0, 6).map(tag => (
                     <span
-                      key={tagIdx}
-                      className="px-4 py-1.5 rounded-full bg-surface text-xs font-medium border border-border/50 text-muted-foreground hover:border-primary/50 hover:text-primary transition-all duration-300"
+                      key={tag}
+                      className="px-3 py-1 rounded-full bg-surface text-xs font-medium border border-border/50 text-muted-foreground"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
+                <span className="text-sm font-medium text-primary inline-flex items-center gap-1">
+                  Read the case study
+                  <ArrowUpRight className="w-4 h-4" />
+                </span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
-        {/* View All CTA */}
+        {/* CTA */}
         <div className="text-center mt-12 animate-fade-in animation-delay-500">
           <AnimatedBorderButton href="#contact">
             Discuss a project

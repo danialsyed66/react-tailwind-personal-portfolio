@@ -1,8 +1,11 @@
+import { Link } from 'react-router';
+
 export const Button = ({
   className = '',
   size = 'default',
   children,
   href,
+  to,
   ...props
 }) => {
   const baseClasses =
@@ -17,6 +20,13 @@ export const Button = ({
   const inner = (
     <span className="relative flex items-center justify-center gap-2">{children}</span>
   );
+  if (to) {
+    return (
+      <Link to={to} className={`inline-flex ${classes}`} {...props}>
+        {inner}
+      </Link>
+    );
+  }
   if (href) {
     return (
       <a

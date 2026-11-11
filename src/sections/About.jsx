@@ -1,29 +1,29 @@
-import { Code2, Lightbulb, Rocket, Map } from 'lucide-react';
+import { Code2, Rocket, Map, ShieldCheck } from 'lucide-react';
 
 const highlights = [
   {
-    icon: Code2,
-    title: 'Full stack delivery',
-    description:
-      'End-to-end ownership from API design and databases to polished React/Next.js frontends.',
-  },
-  {
     icon: Map,
-    title: 'Geospatial at scale',
+    title: 'Maps and geospatial data',
     description:
-      'Mapbox, DeckGL, and ElasticSearch pipelines for millions of records and fast map UX.',
+      'Mapbox GL JS, deck.gl, PostGIS and ElasticSearch for wells, parcels, stores and territories. Drawing tools, and map layers that ops teams set up themselves.',
   },
   {
     icon: Rocket,
-    title: 'AI & LLM in production',
+    title: 'AI features',
     description:
-      'RAG over documents, conversational agents, and risk-scoring integrated into real SaaS workflows.',
+      'Document extraction with a human review step, RAG assistants, access control for agents, and usage-based billing for AI.',
   },
   {
-    icon: Lightbulb,
-    title: 'Platform thinking',
+    icon: ShieldCheck,
+    title: 'Payments and permissions',
     description:
-      'Stripe billing, cloud jobs, and GraphQL/REST APIs built to stay maintainable as products grow.',
+      'Field- and row-level access control, payouts that are safe to retry, signed webhooks, and statements reconciled to the cent.',
+  },
+  {
+    icon: Code2,
+    title: 'Leading builds',
+    description:
+      'Starting codebases, choosing the stack, CI/CD and AWS infrastructure, and working with AI coding agents behind review agents and CI checks.',
   },
 ];
 
@@ -41,37 +41,37 @@ export const About = () => {
             </div>
 
             <h2 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in animation-delay-100 text-secondary-foreground">
-              Building SaaS, maps, and
+              Maps, data and
               <span className="font-serif italic font-normal text-white">
                 {' '}
-                intelligent features.
+                AI features.
               </span>
             </h2>
 
             <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
               <p>
-                I&apos;m a full stack engineer with 3.5+ years shipping production SaaS
-                platforms, AI/LLM-powered features, and large-scale geospatial
-                applications across 5+ client products. My work spans API architecture,
-                RAG pipelines, frontend performance, Stripe billing, and cloud automation.
+                I&apos;m a senior full-stack engineer at MergeStack in Lahore. Since 2022
+                I&apos;ve built products for clients in oil &amp; gas, insurance, freight
+                logistics, retail and e-commerce, and I&apos;ve been the top individual
+                contributor on 19 of the 21 client repositories I&apos;ve worked in.
               </p>
               <p>
-                Day to day I work across JavaScript/TypeScript and Python stacks — React,
-                Next.js (App Router), NestJS, GraphQL, FastAPI, MongoDB, PostgreSQL,
-                ElasticSearch, Mapbox GL JS, DeckGL, and cloud functions on Azure and AWS.
+                I joined as an associate engineer. Today I lead builds and mentor the engineers
+                on them. I was also the founding engineer on two platforms: an AI platform
+                for oil &amp; gas data and an operations platform for a US freight brokerage.
               </p>
               <p>
-                I care about measurable outcomes: faster APIs, healthier Core Web Vitals,
-                automated billing and payouts, and map experiences that stay responsive on
-                huge datasets.
+                Day to day I work in TypeScript and Python: React, Next.js, NestJS, Django,
+                FastAPI, MongoDB, PostgreSQL/PostGIS, ElasticSearch, Mapbox GL JS, deck.gl,
+                OpenAI and LangChain, on AWS and Azure.
               </p>
             </div>
 
             <div className="glass rounded-2xl p-6 glow-border animate-fade-in animation-delay-300">
               <p className="text-lg font-medium italic text-foreground">
-                &ldquo;I aim to ship systems that are reliable under load, straightforward
-                to extend, and honest about trade-offs — from database indexes to prompt
-                design.&rdquo;
+                &ldquo;A lot of my time goes into the unglamorous parts: imports, permissions,
+                payments, and making sure a retried request doesn&apos;t charge anyone
+                twice.&rdquo;
               </p>
             </div>
           </div>

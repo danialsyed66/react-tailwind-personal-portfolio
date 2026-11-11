@@ -1,28 +1,18 @@
-import { Linkedin, Globe, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
+import { Link } from 'react-router';
+import { LINKS } from '@/data/site';
 
 const socialLinks = [
-  {
-    icon: Linkedin,
-    href: 'https://www.linkedin.com/in/danial-syed-7897174b',
-    label: 'LinkedIn',
-  },
-  {
-    icon: Globe,
-    href: 'https://danial-syed.netlify.app',
-    label: 'Website',
-  },
-  {
-    icon: Mail,
-    href: 'mailto:danialsyed66@gmail.com',
-    label: 'Email',
-  },
+  { icon: Linkedin, href: LINKS.linkedin, label: 'LinkedIn' },
+  { icon: Github, href: LINKS.github, label: 'GitHub' },
+  { icon: Mail, href: LINKS.email, label: 'Email' },
 ];
 
 const footerLinks = [
-  { href: '#about', label: 'About' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#contact', label: 'Contact' },
+  { to: '/#about', label: 'About' },
+  { to: '/#projects', label: 'Projects' },
+  { to: '/#experience', label: 'Experience' },
+  { to: '/#contact', label: 'Contact' },
 ];
 
 export const Footer = () => {
@@ -34,9 +24,9 @@ export const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo & Copyright */}
           <div className="text-center md:text-left">
-            <a href="#" className="text-xl font-bold tracking-tight">
+            <Link to="/" className="text-xl font-bold tracking-tight">
               DS<span className="text-primary">.</span>
-            </a>
+            </Link>
             <p className="text-sm text-muted-foreground mt-2">
               © {currentYear} Syed M. Danial Raza Naqvi. All rights reserved.
             </p>
@@ -45,15 +35,13 @@ export const Footer = () => {
           {/* Links */}
           <nav className="flex flex-wrap justify-center gap-6">
             {footerLinks.map(link => (
-              <a
-                key={link.href}
-                href={link.href}
-                target={link.href.includes('http') ? '_blank' : '_self'}
-                rel="noopener noreferrer"
+              <Link
+                key={link.to}
+                to={link.to}
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
 

@@ -9,9 +9,17 @@ const avatar = name =>
 const testimonials = [
   {
     quote:
+      'In need of high quality, efficient work from a creative engineer that takes initiative and keeps you up-to-date? Look no further. Danial is the engineer you’ve been searching for. I’ve had the pleasure of working with Danial on building, optimizing and deploying Centinel’s platform. He is incredibly collaborative and consistently finds a way to make the seemingly impossible possible.\nFrom assessing, fixing and enhancing the work of previous developers to architecting and implementing all new paths, Danial has consistently gone above and beyond in delivering what we need on time or ahead of schedule. The only thing I wish is that I had started working with Danial earlier. Without reservation, I absolutely recommend working with Danial.',
+    author: 'Soton (Rosanwo) Sauerland',
+    role: 'Founder & CEO',
+    avatar: avatar('Soton Sauerland'),
+    relationship: 'Soton was Danial’s client at Centinel',
+  },
+  {
+    quote:
       "Danial is highly skilled technically and a quick learner. It's always a pleasure working with him. He has strong experience in the MERN stack and has worked with various technologies, including Elasticsearch, Azure Functions, Mapbox, Google Maps, and Deck.gl. I highly recommend Danial for his impressive achievements in a short period.",
     author: 'Ahmad Faraz',
-    role: 'COO & Founder, MergeStack',
+    role: 'COO & Co-Founder, MergeStack',
     avatar: avatar('Ahmad Faraz'),
     relationship: 'Ahmad managed Danial directly',
   },
@@ -37,7 +45,7 @@ const testimonials = [
     author: 'Zain Ahmad',
     role: 'Software Engineer',
     avatar: avatar('Zain Ahmad'),
-    relationship: 'Zain reported to Danial directly',
+    relationship: 'Zain worked with Danial on the same team',
   },
 ];
 
@@ -51,6 +59,10 @@ export const Testimonials = () => {
   const previous = () => {
     setActiveIdx(prev => (prev - 1 + testimonials.length) % testimonials.length);
   };
+  const paragraphs = testimonials[activeIdx].quote
+    .split('\n')
+    .map(paragraph => paragraph.trim())
+    .filter(Boolean);
   return (
     <section id="testimonials" className="py-32 relative overflow-hidden">
       <div
@@ -84,7 +96,7 @@ export const Testimonials = () => {
               className="font-serif italic 
             font-normal text-white"
             >
-              colleagues.
+              clients and colleagues.
             </span>
           </h2>
           <p className="text-muted-foreground text-sm max-w-2xl mx-auto">
@@ -101,8 +113,15 @@ export const Testimonials = () => {
                 <Quote className="w-6 h-6 text-primary-foreground" />
               </div>
 
-              <blockquote className="text-xl md:text-2xl font-medium leading-relaxed mb-8 pt-4">
-                &ldquo;{testimonials[activeIdx].quote}&rdquo;
+              {/* One <p> per paragraph, as on LinkedIn */}
+              <blockquote className="text-lg md:text-xl font-medium leading-relaxed mb-8 pt-4 space-y-4">
+                {paragraphs.map((paragraph, i) => (
+                  <p key={i}>
+                    {i === 0 && '\u201C'}
+                    {paragraph}
+                    {i === paragraphs.length - 1 && '\u201D'}
+                  </p>
+                ))}
               </blockquote>
 
               <div className="flex items-center gap-4">
