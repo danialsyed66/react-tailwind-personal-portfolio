@@ -264,10 +264,10 @@ export const projects = [
     contributions: [
       'Sole author of the Partner API: Argon2-hashed API keys shown once, IP allowlists, per-partner rate limits and a full request audit trail.',
       'Signed webhooks (HMAC-SHA256) with zero-downtime secret rotation, a retry ladder from one minute to twelve hours with dead-lettering, and request-hash idempotency, so a retried purchase or payout never happens twice.',
-      'Led the pre-launch money and security review: closed an account-takeover path, made partner webhooks SSRF-safe, made Stripe payouts safe to retry, and added production boot guards.',
+      'Led the pre-launch money and security review: tightened sign-in token verification, made partner webhooks SSRF-safe, made Stripe payouts safe to retry, and added production boot guards.',
       'Fixed an outage sync that ran 1,000+ queries per request and pinned the database at 100% CPU every 15 minutes: a constant number of queries, bulk updates and a partial index (231 ms → 1.8 ms).',
       'Led the live frontend’s move from CRA to Vite, pnpm, Tailwind v4 and shadcn/ui, piece by piece.',
-      'Rebuilt the outage-data backfill (S3 → SQS FIFO → Aurora, about 12.7M rows), fixing silent data loss, and cut AWS spend by about 65%.',
+      'Rebuilt the outage-data backfill (S3 → SQS FIFO → Aurora, about 12.7M rows) and cut AWS spend by about 65%.',
     ],
     stack: [
       'Python',
@@ -426,7 +426,7 @@ export const projects = [
     ],
     summary: [
       'Sales Rep AI gives new sales reps a coach they can ask anything. Answers come from the company’s own training decks, playbooks and documents rather than the open web, so reps get onboarded without booking hours with senior reps.',
-      'It is sold as a subscription, with the first month free.',
+      'It is sold as a subscription.',
     ],
     contributions: [
       'Built the RAG pipeline: PDF and Word ingestion, batched OpenAI embeddings, Pinecone vector search and grounded answers.',
